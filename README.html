@@ -1,0 +1,48 @@
+<h1>ImprovOER</h1>
+
+<p>ImprovOER is a set of programs designed to facilitate improvement of course
+content by providing instructional designers with various statistics and
+indicators of the effectiveness of course content.</p>
+
+<p>In its current state of development, ImprovOER focues primarily on student
+assessment results and works only with the Canvas LMS.  Future versions will include analysis of content and provide functionality to interface with Blackboard.</p>
+
+<h2>Requirements</h2>
+
+<p>Several prerequisites must be installed and/or configured before
+running ImprovOER.</p>
+
+<h3>Canvas API Prerequisites (Python)</h3>
+
+<ul>
+<li>A Python 3 interpreter</li>
+<li>The canvaslms module (can be obtained from <a href="https://github.com/lumenlearning/python3-canvaslms-api">GitHub</a>)</li>
+<li>The PYTHON_PATH environment variable (to indicate where the canvaslms module
+is located)</li>
+</ul>
+
+<h3>Assessment Parameter Prerequisites (Clojure, Optional)</h3>
+
+<ul>
+<li><a href="http://java.com/en/download/index.jsp">Java</a> >= 1.5 (either JDK or JRE)</li>
+<li><a href="http://repo1.maven.org/maven2/org/clojure/clojure/1.5.1/clojure-1.5.1.zip">Clojure</a> >= 1.5.1</li>
+<li>The student and assessment parameter optimization program (will be added to the LumenLearning GitHub repository soon)</li>
+</ul>
+
+<h2>Example</h2>
+
+<ol>
+<li>Go to the ImprovOER directory.</li>
+<li>In the config directory, rename config.R.default to config.R (<code>mv config/config.R.default config/config.R</code>)</li>
+<li>Edit the configuration file (config/config.R) with the appropriate settings.
+(More documentation on how to do this is coming soon.)</li>
+<li>Run R from the root of the ImprovOER directory.</li>
+<li><p>Execute the following commands:</p>
+
+<pre><code>&gt; source("src/main.R")
+&gt; create.crs.report(
+    config=config,
+    course.name="Name of Course",
+    course.id=123456)
+</code></pre></li>
+</ol>

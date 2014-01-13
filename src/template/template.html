@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Content Improvement - {COURSE_NAME} ({COURSE_ID})</title>
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+    
+    <!-- jQuery Tablesorter plugin -->
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/tablesorter/2.13.3/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/tablesorter/2.13.3/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/tablesorter/2.13.3/js/widgets/widget-repeatheaders.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.blue.css" />
+
+    <!-- Different Tablesorter themes --- to change this requires a corresponding change to the class of the table
+                                          and to the activation code below. -->
+<!--
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.black-ice.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.dark.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.default.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.dropbox.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.green.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.grey.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.ice.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdn.jsdelivr.net/tablesorter/2.13.3/css/theme.jui.css" />
+-->
+
+    <!-- Activate tablesorter plugin -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".tablesorter-blue").tablesorter(
+          {
+            widgets: ['zebra', 'repeatHeaders'],
+            widgetOptions: {
+              rowsToSkip: 10
+            }
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Content Improvement Report</h1>
+    <h2>
+      <a href="{COURSE_URL}">{COURSE_NAME}</a></h2>
+    <div id="course-info">
+      <ul>
+        <li>Course ID: {COURSE_ID}</li>
+        <li>{COURSE_CODE}</li>
+        <li>Course starts: {COURSE_START}</li>
+        <li>Course ends: {COURSE_END}</li>
+        <li>Number of students: {NUM_STUDENTS}</li>
+      </ul>
+    </div>
+    <table id="assessment-data" class="tablesorter-blue">
+      <thead>
+        <tr>
+          <th>Asmt<br/>ID</th>
+          <th>Due</th>
+          <th>Median<br/>Submission<br/>Date</th>
+          <th>Title</th>
+          <th>Asmt<br/>Ease<br/>Factor</th>
+          <th>Median<br/>Percent<br/>Earned</th>
+          <th>Median<br/>Points<br/>Earned</th>
+          <th>Points<br/>Possible</th>
+          <th>Median<br/>Content<br/>Minutes</th>
+          <th>Median<br/>Content<br/>Pageviews</th>
+          <th>Median<br/>Minutes<br/>per Pageview</th>
+          <th>Percent<br/>Submitting</th>
+          <th>Percent<br/>Late</th>
+          <th>0 Scores</th>
+          <th>Perfect<br/>Scores</th>
+          <th>Mean<br/>Submission<br/>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        {TABLE_ROWS}
+      </tbody>
+    </table>
+  </body>
+</html>

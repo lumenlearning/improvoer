@@ -1,0 +1,31 @@
+# Example values for the configuration object
+config <- list(
+  # parent directory for reports
+  base.dir="/home/me/id_reports",
+  # template file path
+  template.path="src/template/template.html",
+  # name of Python 3 interpreter
+  python.cmd="python3.2",
+  # API token file path
+  auth.token.path="/home/me/id_reports/auth.token",
+  # host name of Canvas server
+  canvas.host="canvas.instructure.com",
+
+  # pageview database connection
+  jdbc.jar.path="/home/me/jdbc/mysql-connector-java-5.1.25-bin.jar",
+  jdbc.driver.class="com.mysql.jdbc.Driver",
+  mysql.identifier.quote="`",
+  pageview.db.host="127.0.0.1",
+  pageview.db.port="3306",
+  pageview.db.schema="canvas_pageviews",
+  pageview.db.username="pageviews",
+  pageview.db.password="pageviews_pass",
+
+  # assessment difficulty parameter estimation
+  params.clojure.path="/home/me/param_estimation/clojure.jar",
+  params.estimator.path="/home/me/param_estimation",
+  params.input.dir="/tmp",
+  params.eta="0.15",
+  params.max.iters="250000",
+  params.precision="0.0001"
+)
